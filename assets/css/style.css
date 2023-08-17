@@ -488,9 +488,17 @@ body.dark .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 	}
     .card{
         width:70%;
+        height: auto !important;
     }
     .name span{
         font-size: 50px!important;
+    }
+    ul.mo{
+        column-gap: 0.5rem !important;
+    }
+    ul.mo li{
+        white-space: nowrap;
+
     }
 }
 
