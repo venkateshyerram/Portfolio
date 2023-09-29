@@ -500,6 +500,12 @@ body.dark .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
         white-space: nowrap;
 
     }
+	.profile-pic{
+		max-width: 100%;
+	}
+	.identity-info{
+		padding-top :0rem !important;
+	}
 }
 
 /* #Link to page
@@ -535,9 +541,12 @@ ul.ver{
 }
 .image-fluid{
     text-align: center;
-    max-width: 100%;
+    max-width: 80%;
     border-radius: 50%;
 
+}
+.identity-info{
+	padding-top: 10rem;
 }
 .middle{
     text-align: center;
