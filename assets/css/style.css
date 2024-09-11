@@ -392,7 +392,7 @@ body.dark p{
     transition-delay: 0ms !important;
 }
 body.dark .bg-light {
-	background-color: #0bceaf !important;
+	background-color:	#0bceaf !important;
 }
 body.dark .start-header {
 	box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.15);
@@ -558,12 +558,12 @@ ul.ver{
     background-color: #202026;
     /* border: 1px solid black; */
     text-align: center;
-    padding: 0px 0px 5px 0px;
+    padding: 0px 0px 5px 10px;
     display: inline-flex;
     border-radius: 5px;
     margin: 1rem;
     font-size: small;
-    height: 19rem;
+    height: 23rem;
     box-shadow: -1rem 0 3rem black;
 }
 
@@ -578,7 +578,7 @@ ul.ver{
 .card .head{
     background-color:transparent;
     margin-top:5%;
-    color: #a76acc;
+    color: #0bceaf;
     box-sizing: border-box;
     
 }
@@ -606,6 +606,7 @@ ul.ver{
 }
 .cont p{
     text-align: initial;
+	font-size: medium;
 }
 .cont ul{
     list-style: none;
