@@ -1,0 +1,646 @@
+.games-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.games-container h2 {
+  color: #0bceaf;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.game-card {
+  background: #1a1a1a;
+  border: 1px solid #0bceaf;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.game-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(11, 206, 175, 0.2);
+  border-color: #0bceaf;
+}
+
+.game-card h3 {
+  margin-bottom: 0.5rem;
+  color: #0bceaf;
+  font-size: 1.2rem;
+}
+
+.game-card p {
+  color: #ffffff;
+  margin-bottom: 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.game-preview {
+  display: none;
+}
+
+/* Remove all mini-sudoku related styles */
+.mini-sudoku,
+.mini-row,
+.mini-cell {
+  display: none;
+}
+
+.back-button {
+  background: transparent;
+  border: 1px solid #0bceaf;
+  color: #0bceaf;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background: rgba(11, 206, 175, 0.1);
+}
+
+/* Sudoku Styles */
+.sudoku-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.sudoku-grid {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 0;
+  background: #0bceaf;
+  padding: 2px;
+  border-radius: 4px;
+  max-width: 450px;
+  margin: 0 auto;
+  border: 2px solid #0bceaf;
+}
+
+.sudoku-row {
+  display: contents;
+}
+
+.sudoku-cell {
+  width: 100%;
+  aspect-ratio: 1;
+  text-align: center;
+  font-size: 1.2rem;
+  border: 1px solid #0bceaf;
+  background: #1a1a1a;
+  color: #ffffff;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Add thicker borders for 3x3 boxes */
+.sudoku-cell:nth-child(3n) {
+  border-right: 2px solid #0bceaf;
+}
+
+.sudoku-row:nth-child(3n) .sudoku-cell {
+  border-bottom: 2px solid #0bceaf;
+}
+
+/* Make the first row's top border thicker */
+.sudoku-row:first-child .sudoku-cell {
+  border-top: 2px solid #0bceaf;
+}
+
+/* Make the first column's left border thicker */
+.sudoku-cell:nth-child(9n + 1) {
+  border-left: 2px solid #0bceaf;
+}
+
+.sudoku-cell:focus {
+  outline: none;
+  border-color: #0bceaf;
+  background: rgba(11, 206, 175, 0.1);
+}
+
+.sudoku-cell.editable {
+  cursor: pointer;
+}
+
+.sudoku-cell.editable:hover {
+  background: rgba(11, 206, 175, 0.1);
+}
+
+.sudoku-box {
+  display: none;
+}
+
+.number-pad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  max-width: 200px;
+}
+
+.number-button {
+  background: transparent;
+  border: 1px solid #0bceaf;
+  color: #0bceaf;
+  padding: 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1.2rem;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.number-button:hover {
+  background: rgba(11, 206, 175, 0.1);
+}
+
+/* Hangman Styles */
+.hangman-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.word-display {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.word-letter {
+  min-width: 30px;
+  text-align: center;
+  border-bottom: 2px solid #0bceaf;
+  padding: 0 0.5rem;
+}
+
+.hangman-status {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.alphabet-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.alphabet-button {
+  padding: 0.5rem;
+  background: #1a1a1a;
+  border: 1px solid #0bceaf;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-radius: 4px;
+}
+
+.alphabet-button:hover:not(:disabled) {
+  background: rgba(11, 206, 175, 0.1);
+}
+
+.alphabet-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.alphabet-button.guessed {
+  background: #0bceaf;
+  color: #1a1a1a;
+}
+
+.new-game-button {
+  background: transparent;
+  border: 1px solid #0bceaf;
+  color: #0bceaf;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.new-game-button:hover {
+  background: rgba(11, 206, 175, 0.1);
+}
+
+.game-question {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #0bceaf;
+}
+
+.game-question h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.game-question p {
+  font-size: 1.1rem;
+  color: #fff;
+  opacity: 0.9;
+}
+
+.game-controls {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.game-button {
+  padding: 0.5rem 1rem;
+  background: var(--primary-color);
+  color: var(--background-color);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.game-button:hover {
+  background: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+.reveal-button {
+  padding: 0.5rem 1rem;
+  background: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.reveal-button:hover {
+  background: rgba(11, 206, 175, 0.1);
+  transform: translateY(-2px);
+}
+
+.success-message {
+  color: var(--primary-color);
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.error-message {
+  color: #ff4444;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.games-section {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--text-color);
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #1a1a1a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #1a1a1a;
+  border-radius: 8px;
+  padding: 2rem;
+  max-width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #0bceaf;
+  margin: 2rem;
+}
+
+.close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 0.5rem;
+  line-height: 1;
+}
+
+.close-button:hover {
+  color: #0bceaf;
+}
+
+.game-modal {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+/* Keep existing Sudoku and Hangman styles */
+.hangman-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.word-display {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 2rem;
+  color: var(--text-color);
+}
+
+.word-letter {
+  min-width: 30px;
+  text-align: center;
+  border-bottom: 2px solid var(--text-color);
+}
+
+.alphabet-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+  max-width: 500px;
+}
+
+.alphabet-button {
+  padding: 0.5rem;
+  background: var(--input-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.alphabet-button:hover:not(:disabled) {
+  background: var(--primary-color-light);
+}
+
+.alphabet-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.alphabet-button.guessed {
+  background: var(--primary-color);
+  color: white;
+}
+
+.game-controls {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.game-button {
+  padding: 0.5rem 1rem;
+  background: var(--primary-color);
+  color: var(--background-color);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.game-button:hover {
+  background: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+.reveal-button {
+  padding: 0.5rem 1rem;
+  background: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.reveal-button:hover {
+  background: rgba(11, 206, 175, 0.1);
+  transform: translateY(-2px);
+}
+
+.success-message {
+  color: var(--primary-color);
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.error-message {
+  color: #ff4444;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.book-randomizer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.genre-selector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  max-width: 300px;
+}
+
+.genre-selector label {
+  color: #0bceaf;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.genre-dropdown {
+  background: #1a1a1a;
+  color: #ffffff;
+  border: 1px solid #0bceaf;
+  border-radius: 4px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  max-width: 300px;
+}
+
+.genre-dropdown option {
+  background: #1a1a1a;
+  color: #ffffff;
+}
+
+.book-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: #1a1a1a;
+  border: 1px solid #0bceaf;
+  border-radius: 8px;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+.book-cover {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  aspect-ratio: 2/3;
+  margin: 0 auto;
+  border: 1px solid #0bceaf;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.book-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.book-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.book-details h4 {
+  color: #0bceaf;
+  font-size: 1.2rem;
+  margin: 0;
+  word-wrap: break-word;
+}
+
+.book-details .author {
+  color: #ffffff;
+  opacity: 0.8;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.rating {
+  color: #0bceaf;
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.rating span {
+  margin-left: 0.5rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.book-details .genre {
+  color: #ffffff;
+  opacity: 0.8;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.book-details .description {
+  color: #ffffff;
+  opacity: 0.9;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0.5rem 0 0;
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .book-card {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .book-cover {
+    width: 150px;
+    height: 225px;
+    margin: 0;
+  }
+
+  .book-details {
+    text-align: left;
+  }
+
+  .book-details h4 {
+    font-size: 1.4rem;
+  }
+
+  .genre-selector {
+    flex-direction: row;
+    justify-content: center;
+  }
+} 
